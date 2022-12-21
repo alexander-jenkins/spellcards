@@ -1,4 +1,4 @@
-import Spellcard from './components/spellcard/Spellcard';
+import Spellcard from './components/Spell/Spell';
 
 function App() {
     return (

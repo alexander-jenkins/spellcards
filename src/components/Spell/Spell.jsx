@@ -1,8 +1,11 @@
-import Spell from './SampleSpell.json';
+import Spell from './Spell.json';
+import SpellAreaTags from './SpellAreaTags';
 import SpellComponents from './SpellComponents';
+import SpellDescription from './SpellDescription';
+import SpellDuration from './SpellDuration';
 import SpellRange from './SpellRange.jsx';
 
-function Spellcard() {
+export default function Spellcard(props) {
     let {
         name,
         level,
@@ -21,13 +24,11 @@ function Spellcard() {
             <p>{level}</p>
             <p>{school}</p>
             <p>{time.map((time) => `${time.number} ${time.unit}`)}</p>
-            <p>{duration.map((dur) => `${dur.type}`)}</p>
+            <SpellDuration duration={duration[0]} />
             <SpellComponents components={components} />
-            <p>{entries}</p>
-            <p>{areaTags.map((tag) => `${tag + ' '}`)}</p>
+            <SpellDescription description={entries} />
             <SpellRange range={range} />
+            <SpellAreaTags tags={areaTags} />
         </div>
     );
 }
-
-export default Spellcard;

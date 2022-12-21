@@ -4,7 +4,7 @@ function SpellRange(props) {
     let unit = range.distance.type;
     let distance = range.distance.amount;
 
-    return `${distance} ${unit} / ${area}`;
+    return <div className='spell-range'>{`${distance} ${unit} (${area})`}</div>;
 }
 
 export default SpellRange;
