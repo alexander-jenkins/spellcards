@@ -11,6 +11,7 @@ import './SpellCard.css';
 export default function SpellCard(props) {
     let {
         name,
+        source,
         level,
         school,
         time,
@@ -23,7 +24,12 @@ export default function SpellCard(props) {
 
     return (
         <div className='spell-card'>
-            <SpellTitle name={name} level={level} school={school} />
+            <SpellTitle
+                name={name}
+                source={source}
+                level={level}
+                school={school}
+            />
             <SpellDescription name={name} description={entries} />
             <SpellCastTime time={time} meta={meta} />
             <SpellDuration duration={duration} />
