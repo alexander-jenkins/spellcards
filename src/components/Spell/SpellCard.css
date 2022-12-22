@@ -28,6 +28,35 @@
     border-radius: 1vw;
     margin: 2px;
 }
+.spell-description-sub {
+    text-align: left;
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.spell-description-sub-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 5px;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+.spell-description-table table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.spell-description-list {
+    text-align: left;
+    margin: auto;
+}
 
 /* time cost style   */
 .spell-time-costs {

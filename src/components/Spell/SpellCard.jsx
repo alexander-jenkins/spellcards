@@ -24,7 +24,7 @@ export default function SpellCard(props) {
     return (
         <div className='spell-card'>
             <SpellTitle name={name} level={level} school={school} />
-            <SpellDescription description={entries} />
+            <SpellDescription name={name} description={entries} />
             <SpellCastTime time={time} meta={meta} />
             <SpellDuration duration={duration} />
             <SpellComponents components={components} />
