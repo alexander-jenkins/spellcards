@@ -1,19 +1,16 @@
-import Spellcard from './components/Spell/Spell';
+import SpellCard from './components/Spell/SpellCard';
+import { spell } from './assets/Spells/spells-phb.json';
 
-function App() {
+export default function App() {
+    console.log(spell);
     return (
         <div className='App'>
             <h1>5e Spellcards</h1>
-            <div id='card-list'>
-                <Spellcard />
-            </div>
-            <footer>
-                <p>
-                    {'<'}-- Data taken from 5e.tools --{'>'}
-                </p>
-            </footer>
+            {spell.map((spell, idx) => (
+                <SpellCard key={idx} spell={spell} />
+            ))}
+
+            <div id='card-list'></div>
         </div>
     );
 }
-
-export default App;

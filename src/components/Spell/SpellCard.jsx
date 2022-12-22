@@ -1,11 +1,13 @@
-import Spell from './Spell.json';
+import Spell from '../../assets/Spells/dummy-spell.json';
 import SpellAreaTags from './SpellAreaTags';
 import SpellComponents from './SpellComponents';
 import SpellDescription from './SpellDescription';
 import SpellDuration from './SpellDuration';
 import SpellRange from './SpellRange.jsx';
+import SpellTimeCosts from './SpellTimeCosts';
+import SpellTitle from './SpellTitle';
 
-export default function Spellcard(props) {
+export default function SpellCard(props) {
     let {
         name,
         level,
@@ -16,14 +18,17 @@ export default function Spellcard(props) {
         entries,
         areaTags,
         range,
-    } = Spell;
+    } = props.spell;
+    let title = {
+        name: name,
+        level: level,
+        school: school,
+    };
 
     return (
-        <div className='spell'>
-            <h2>{name}</h2>
-            <p>{level}</p>
-            <p>{school}</p>
-            <p>{time.map((time) => `${time.number} ${time.unit}`)}</p>
+        <div className='spell-card'>
+            <SpellTitle title={title} />
+            <SpellTimeCosts time={time} />
             <SpellDuration duration={duration[0]} />
             <SpellComponents components={components} />
             <SpellDescription description={entries} />

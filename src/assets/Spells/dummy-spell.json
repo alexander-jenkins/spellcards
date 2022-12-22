@@ -22,7 +22,11 @@
     "components": {
         "v": true,
         "s": true,
-        "m": "a twig from a tree that has been struck by lightning"
+        "m": {
+            "text": "diamonds worth 300 gp, which the spell consumes",
+            "cost": 30000,
+            "consume": true
+        }
     },
     "duration": [
         {

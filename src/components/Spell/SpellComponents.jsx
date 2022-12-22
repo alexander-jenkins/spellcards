@@ -5,7 +5,8 @@ export default function SpellComponents(props) {
     let items = [];
     v && items.push('V');
     s && items.push('S');
-    m && items.push(`M (${m})`);
+    // if (m.text !== '') items.push(`M (${m.text})`);
+    // else items.push('M');
 
     return <div className='spell-components'>{items.join(', ')}</div>;
 }

@@ -1,8 +1,6 @@
 export default function SpellDuration(props) {
     let { duration } = props;
 
-    console.log(duration.type);
-
     let durationString = '';
     switch (duration.type) {
         case 'timed':
