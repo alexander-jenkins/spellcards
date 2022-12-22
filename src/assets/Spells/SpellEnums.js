@@ -4,7 +4,7 @@ export const SpellSchool = Object.freeze({
     C: 'Conjuration',
     D: 'Divination',
     E: 'Enchantment',
-    EV: 'Evocation',
+    V: 'Evocation',
     I: 'Illusion',
     N: 'Necromancy',
     T: 'Transmutation',
@@ -75,6 +75,10 @@ export const SpellRanges = Object.freeze({
                 return 'Self';
             case 'touch':
                 return 'Touch';
+            case 'sight':
+                return 'Sight';
+            case 'unlimited':
+                return 'Unlimited';
             default:
                 let { amount } = distance;
                 return `${amount} ${UnitConverter[type]}`;
