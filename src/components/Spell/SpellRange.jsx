@@ -1,11 +1,10 @@
-function SpellRange(props) {
-    // let { range } = props;
-    // let area = range.type;
-    // let unit = range.distance.type;
-    // let distance = range.distance.amount;
+import { SpellRanges } from '../../assets/Spells/SpellEnums';
 
-    // return <div className='spell-range'>{`${distance} ${unit} (${area})`}</div>;
-    return <div className='spell-range'>Spell range here!</div>;
+export default function SpellRange(props) {
+    let { type, distance } = props.range;
+    return (
+        <div className='spell-range'>{`${eval(
+            `SpellRanges.${type}(distance)`
+        )}`}</div>
+    );
 }
-
-export default SpellRange;

@@ -4,9 +4,7 @@
     border: 1px solid black;
     border-radius: 1vw;
     max-width: 50vw;
-
     background-color: whitesmoke;
-
     margin: 1vw;
 }
 
@@ -17,11 +15,10 @@
     margin: 2px;
 }
 .spell-title-name {
-    font-size: 2vw;
+    font-size: 1.5em;
     font-weight: bold;
 }
 .spell-title-level-school {
-    font-size: 1.5vw;
     font-style: italic;
 }
 
@@ -39,7 +36,6 @@
     margin: 2px;
 }
 .spell-time-cost {
-    font-size: 1.5vw;
     font-style: italic;
 }
 
@@ -52,6 +48,13 @@
 
 /* components style  */
 .spell-components {
+    border: 1px solid purple;
+    border-radius: 1vw;
+    margin: 2px;
+}
+
+/* range style */
+.spell-range {
     border: 1px solid purple;
     border-radius: 1vw;
     margin: 2px;
