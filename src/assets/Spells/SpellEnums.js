@@ -30,3 +30,10 @@ export const SpellLevels = Object.freeze({
     8: '8th-level',
     9: '9th-level',
 });
+
+// convert the spell duration abbreviation to a string
+export const SpellDurations = Object.freeze({
+    instant: 'Instantaneous',
+    permanent: 'Permanent (until dispelled)',
+    timed: 'timed',
+});

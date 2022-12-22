@@ -5,8 +5,12 @@ export default function SpellComponents(props) {
     let items = [];
     v && items.push('V');
     s && items.push('S');
-    // if (m.text !== '') items.push(`M (${m.text})`);
-    // else items.push('M');
+    m && items.push(parseMaterial(m));
 
     return <div className='spell-components'>{items.join(', ')}</div>;
+}
+
+// parse material components
+function parseMaterial(m) {
+    return typeof m === 'string' ? `M (${m})` : `M (${m.text})`;
 }

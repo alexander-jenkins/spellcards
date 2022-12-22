@@ -1,0 +1,58 @@
+/* main card style */
+.spell-card {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1vw;
+    max-width: 50vw;
+
+    background-color: whitesmoke;
+
+    margin: 1vw;
+}
+
+/* title styles */
+.spell-title {
+    border: 1px solid purple;
+    border-radius: 1vw;
+    margin: 2px;
+}
+.spell-title-name {
+    font-size: 2vw;
+    font-weight: bold;
+}
+.spell-title-level-school {
+    font-size: 1.5vw;
+    font-style: italic;
+}
+
+/* description styles */
+.spell-description {
+    border: 1px solid purple;
+    border-radius: 1vw;
+    margin: 2px;
+}
+
+/* time cost style   */
+.spell-time-costs {
+    border: 1px solid purple;
+    border-radius: 1vw;
+    margin: 2px;
+}
+.spell-time-cost {
+    font-size: 1.5vw;
+    font-style: italic;
+}
+
+/* duration style */
+.spell-duration {
+    border: 1px solid purple;
+    border-radius: 1vw;
+    margin: 2px;
+}
+
+/* components style  */
+.spell-components {
+    border: 1px solid purple;
+    border-radius: 1vw;
+    margin: 2px;
+}

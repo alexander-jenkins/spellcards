@@ -1,23 +1,21 @@
+import { SpellDurations } from '../../assets/Spells/SpellEnums';
 export default function SpellDuration(props) {
-    let { duration } = props;
+    let rawDuration = props.duration[0];
+    let duration = SpellDurations[rawDuration.type];
 
-    let durationString = '';
-    switch (duration.type) {
-        case 'timed':
-            if (duration.concentration)
-                durationString = `${duration.duration.amount} ${duration.duration.type} (concentration)`;
-            durationString = `${duration.duration.amount} ${duration.duration.type}`;
-            break;
-        case 'instant':
-            durationString = 'Instant';
-            break;
-        case 'permanent':
-            durationString = 'Permanent until dispelled';
-            break;
-        default:
-            durationString = 'Unknown duration';
-            break;
+    if (rawDuration.type === 'timed') {
+        let { amount, type } = rawDuration.duration;
+        duration = parseTimed(amount, type);
     }
 
-    return <div className='spell-duration'>{durationString}</div>;
+    return <div className='spell-duration'>{`${duration}`}</div>;
+}
+
+// parse a timed duration
+function parseTimed(amount, unit) {
+    let duration = amount + ' ' + unit;
+    if (amount > 1) {
+        duration += 's';
+    }
+    return duration;
 }
