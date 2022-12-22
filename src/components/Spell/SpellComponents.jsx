@@ -7,7 +7,9 @@ export default function SpellComponents(props) {
     s && items.push('S');
     m && items.push(parseMaterial(m));
 
-    return <div className='spell-components'>{items.join(', ')}</div>;
+    return (
+        <div className='spell-components'>Components: {items.join(', ')}</div>
+    );
 }
 
 // parse material components

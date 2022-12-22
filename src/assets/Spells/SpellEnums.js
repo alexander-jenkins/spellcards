@@ -33,9 +33,37 @@ export const SpellLevels = Object.freeze({
 
 // convert the spell durations to a string
 export const SpellDurations = Object.freeze({
-    instant: 'Instantaneous',
-    permanent: 'Permanent (until dispelled)',
-    timed: 'timed',
+    instant: () => 'Instantaneous',
+    permanent: () => 'Permanent (until dispelled)',
+    timed: (duration) => {
+        let { type, amount } = duration;
+        return `${amount} ${UnitConverter[type]}` + (amount > 1 ? 's' : '');
+    },
+    special: () => 'special',
+});
+
+// convert the spell cast time to a string
+export const SpellCastTimes = Object.freeze({
+    action: (time) => {
+        let { number, unit } = time;
+        return `${number} ${UnitConverter[unit]}`;
+    },
+    bonus: (time) => {
+        let { number, unit } = time;
+        return `${number} ${UnitConverter[unit]}`;
+    },
+    reaction: (time) => {
+        let { number, unit } = time;
+        return `${number} ${UnitConverter[unit]}`;
+    },
+    minute: (time) => {
+        let { number, unit } = time;
+        return `${number} ${UnitConverter[unit]}` + (number > 1 ? 's' : '');
+    },
+    hour: (time) => {
+        let { number, unit } = time;
+        return `${number} ${UnitConverter[unit]}` + (number > 1 ? 's' : '');
+    },
 });
 
 // convert the spell ranges to a string
@@ -49,42 +77,46 @@ export const SpellRanges = Object.freeze({
                 return 'Touch';
             default:
                 let { amount } = distance;
-                return `${amount}${UnitConverter[type]}`;
+                return `${amount} ${UnitConverter[type]}`;
         }
     },
     cone: (distance) => {
         let { type, amount } = distance;
-        return `${amount}${UnitConverter[type]} cone`;
+        return `${amount} ${UnitConverter[type]} (cone)`;
     },
     sphere: (distance) => {
         let { type, amount } = distance;
-        return `${amount}${UnitConverter[type]} sphere`;
+        return `${amount} ${UnitConverter[type]} (sphere)`;
     },
     radius: (distance) => {
         let { type, amount } = distance;
-        return `${amount}${UnitConverter[type]} radius`;
+        return `${amount} ${UnitConverter[type]} (radius)`;
     },
-    special: (distance) => {
-        return JSON.stringify(distance);
-    },
+    special: (distance) => JSON.stringify(distance),
     line: (distance) => {
         let { type, amount } = distance;
-        return `${amount}${UnitConverter[type]} line`;
+        return `${amount} ${UnitConverter[type]} (line)`;
     },
     cube: (distance) => {
         let { type, amount } = distance;
-        return `${amount}${UnitConverter[type]} cube`;
+        return `${amount} ${UnitConverter[type]} (cube)`;
     },
     hemisphere: (distance) => {
         let { type, amount } = distance;
-        return `${amount}${UnitConverter[type]} hemisphere`;
+        return `${amount} ${UnitConverter[type]} (hemisphere)`;
     },
 });
 
 const UnitConverter = Object.freeze({
+    round: 'rd',
     feet: 'ft',
     miles: 'mi',
     meters: 'm',
     kilometers: 'km',
-    hours: 'hr',
+    minute: 'min',
+    hour: 'hr',
+    day: 'day',
+    action: 'A',
+    bonus: 'BA',
+    reaction: 'R',
 });

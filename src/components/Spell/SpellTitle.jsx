@@ -1,7 +1,7 @@
 import { SpellSchool, SpellLevels } from '../../assets/Spells/SpellEnums';
 
 export default function SpellTitle(props) {
-    let { name, level, school } = props.title;
+    let { name, level, school } = props;
 
     if (level === 0) {
         return (

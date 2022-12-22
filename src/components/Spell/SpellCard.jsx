@@ -1,10 +1,9 @@
-import SpellAreaTags from './SpellAreaTags';
-import SpellComponents from './SpellComponents';
-import SpellDescription from './SpellDescription';
-import SpellDuration from './SpellDuration';
-import SpellRange from './SpellRange.jsx';
-import SpellTimeCosts from './SpellTimeCosts';
 import SpellTitle from './SpellTitle';
+import SpellDescription from './SpellDescription';
+import SpellCastTime from './SpellCastTime';
+import SpellDuration from './SpellDuration';
+import SpellComponents from './SpellComponents';
+import SpellRange from './SpellRange.jsx';
 
 // style the card
 import './SpellCard.css';
@@ -18,24 +17,18 @@ export default function SpellCard(props) {
         duration,
         components,
         entries,
-        areaTags,
         range,
+        meta,
     } = props.spell;
-    let title = {
-        name: name,
-        level: level,
-        school: school,
-    };
 
     return (
         <div className='spell-card'>
-            <SpellTitle title={title} />
+            <SpellTitle name={name} level={level} school={school} />
             <SpellDescription description={entries} />
-            <SpellTimeCosts time={time} />
+            <SpellCastTime time={time} meta={meta} />
             <SpellDuration duration={duration} />
             <SpellComponents components={components} />
             <SpellRange range={range} />
-            <SpellAreaTags tags={areaTags} />
         </div>
     );
 }
